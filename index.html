@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Tickets para la Conferencia</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,6 +17,44 @@
         <img src="assets/images/pattern-squiggly-line-top.svg" alt="" class="asset">
         <img src="assets/images/pattern-circle.svg" alt="" class="asset">
         <img src="assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg" alt="" class="asset">
+      </div>
+      <div class="formContainer">
+        <form>
+          <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+          <br>
+          <p>Secure your spot at next year's biggest conference.</p>
+          <br>
+          <div id="avatarUploader">
+              <label for="avatarImage">Upload Avatar</label>
+              <div class="input-wrapper">
+                  <input type="file" id="avatarImage" accept=".png,.jpg,.jpeg" required>
+                  <span class="placeholder">
+                      <img src="assets/images/icon-upload.svg" alt="Upload icon">
+                      Drag and drop or click to upload
+                  </span>
+              </div>
+          </div>
+          <br>
+          <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" required>
+          </div>
+
+          <div class="form-group">
+              <label for="emailAddress">Email Address</label>
+              <input type="email" id="emailAddress" required>
+          </div>
+
+          <div class="form-group">
+              <label for="githubUsername">GitHub Username</label>
+              <input type="text" id="githubUsername" required>
+          </div>
+
+          <button type="submit" class="generate-btn">Generate My Ticket</button>
+        </form>
+      </div>
+      <div id="ticketSection" class="hidden">
+
       </div>
     </main>
 
