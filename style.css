@@ -1,4 +1,4 @@
-/* Variables para colores */
+/* Variables de color para tema oscuro */
 :root {
   --neutral-0: hsl(0, 0%, 100%);
   --neutral-300: hsl(252, 6%, 83%);
@@ -10,12 +10,14 @@
   --orange-700: hsl(7, 71%, 60%);
 }
 
+/* Reset general */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Configuración base página */
 body {
   min-height: 100vh;
   width: 100%;
@@ -27,6 +29,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Contenedor principal */
 main {
   width: 100%;
   max-width: 375px;
@@ -44,14 +47,22 @@ main {
   align-items: center;
 }
 
-.formContainer{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Contenedor del formulario */
+.formContainer {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.form-group{
+/* Estado oculto del formulario */
+.formContainer.hidden {
+    display: none;
+}
+
+/* Grupos de inputs */
+.form-group {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -59,6 +70,7 @@ main {
   margin-bottom: 2rem;
 }
 
+/* Estilos de etiquetas */
 .form-group label {
   display: block;
   margin-bottom: 1rem;
@@ -66,7 +78,8 @@ main {
   font-size: 20px;
 }
 
-.form-group input{
+/* Estilos inputs */
+.form-group input {
   width: 100%;
   height: 50px;
   padding: 1rem;
@@ -78,11 +91,13 @@ main {
   font-size: 1rem;
 }
 
+/* Hover de inputs */
 .form-group input:hover {
   border: 2px solid var(--orange-500);
   background-color: var(--neutral-900);
 }
 
+/* Área subida imagen */
 #avatarUploader {
   width: 100%;
   display: flex;
@@ -92,6 +107,7 @@ main {
   padding-top: 2rem; 
 }
 
+/* Etiqueta área subida */
 #avatarUploader label {
   position: absolute;
   top: 0;
@@ -102,6 +118,7 @@ main {
 
 }
 
+/* Marco área subida */
 #avatarUploader .input-wrapper {
   width: 100%;
   height: 20vh;
@@ -113,16 +130,19 @@ main {
   align-items: center;
 }
 
+/* Hover área subida */
 #avatarUploader .input-wrapper:hover {
   border-color: var(--orange-500);
   background-color: var(--neutral-900);
 }
 
+/* Transiciones suaves */
 .form-group input,
 #avatarUploader .input-wrapper {
   transition: all 0.3s ease;
 }
 
+/* Input file oculto */
 #avatarUploader input[type="file"] {
     opacity: 0;
     width: 100%;
@@ -131,6 +151,7 @@ main {
     cursor: pointer;
 }
 
+/* Texto placeholder */
 #avatarUploader .placeholder {
     text-align: center;
     color: var(--neutral-300);
@@ -140,11 +161,13 @@ main {
     gap: 0.5rem;
 }
 
+/* Icono placeholder */
 #avatarUploader .placeholder img {
     width: 24px;
     height: 24px;
 }
 
+/* Contenedor botón */
 .subButton {
   width: 100%;
   display: flex;
@@ -152,6 +175,7 @@ main {
   margin-top: 1rem;
 }
 
+/* Botón generar */
 .generate-btn {
   padding: 1rem 2rem;
   border: none;
@@ -164,10 +188,12 @@ main {
   cursor: pointer;
 }
 
+/* Hover botón */
 .generate-btn:hover {
   background-color: var(--orange-700);
 }
 
+/* Contenedor assets decorativos */
 .assetContainer {
   position: absolute;
   width: 100%;
@@ -179,12 +205,13 @@ main {
   z-index: -1;
 }
 
+/* Assets individuales */
 .asset {
   position: absolute;
   pointer-events: none;
 }
 
-
+/* Posiciones assets */
 .asset:nth-child(1) { 
   top: 0;
   left: 0;
@@ -215,17 +242,151 @@ main {
   z-index: -1;
 }
 
+/* Títulos generales */
 h1 {
   color: var(--neutral-0);
   text-align: center;
 }
 
+/* Párrafos generales */
 p {
   color: var(--neutral-500);
   text-align: center;
 }
-label{
+
+/* Etiquetas generales */
+label {
   color: var(--neutral-0);
 }
 
+/* Contenedor del ticket */
+#ticketcontainer {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
 
+/* Estado visible del ticket */
+#ticketcontainer.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Diseño base ticket */
+.ticket {
+    background-color: var(--neutral-900);
+    background-image: url('assets/images/pattern-ticket.svg');
+    background-size: cover;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+/* Layout interno ticket */
+.ticket-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Info conferencia */
+.conf-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Logo conferencia */
+.conf-logo {
+    width: 32px;
+    height: 32px;
+}
+
+/* Detalles conferencia */
+.conf-details {
+    color: var(--neutral-300);
+    font-size: 0.875rem;
+}
+
+/* Número de ticket */
+.ticket-number {
+    color: var(--orange-500);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* Info asistente */
+.attendee-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+/* Contenedor avatar */
+.avatar-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--orange-500);
+    background-color: var(--neutral-700); /* Añadido para el fondo */
+}
+
+/* Imagen avatar */
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Añadido para que la imagen cubra todo el espacio */
+    display: block; /* Añadido para evitar espacio extra */
+}
+
+/* Detalles asistente */
+.attendee-details {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Nombre asistente */
+.attendee-name {
+    color: var(--neutral-0);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Icono GitHub */
+.github-info img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Contenido éxito */
+.success-content {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Título éxito */
+.success-title {
+    color: var(--neutral-0);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Mensaje éxito */
+.success-message {
+    color: var(--neutral-500);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+/* Wrapper ticket */
+.ticket-wrapper {
+    margin-top: 2rem;
+}
